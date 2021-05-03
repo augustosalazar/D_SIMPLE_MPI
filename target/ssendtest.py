@@ -5,9 +5,9 @@ rank = comm.Get_rank()
 if rank == 0:
 	data = [1,2,3]
 	print ("I am process ",rank,"... going to send")
-	comm.send(data, dest=1)
+	comm.ssend(data, dest=1)
 	data = [4,5,6]
-	comm.send(data, dest=2)
+	comm.ssend(data, dest=2)
 	print("I am process ",rank,"sent")
 elif rank == 1:
 	data = []
