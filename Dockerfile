@@ -6,6 +6,6 @@ RUN apt -y install libopenmpi-dev
 RUN pip install mpi4py
 RUN adduser --disabled-password --gecos "" mpirun
 RUN echo "mpirun ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN echo "btl_base_warn_component_used = 0" >> /etc/openmpi/openmpi-mca-params.conf
+RUN echo "btl_base_warn_component_unused = 0" >> /etc/openmpi/openmpi-mca-params.conf
 RUN mkdir /app
 RUN chown mpirun:mpirun /app
