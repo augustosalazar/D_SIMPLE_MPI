@@ -8,4 +8,5 @@ To install nano on Play with Docker:
 apk --update add nano
 
 Run the primer check with:
-sh run.sh <number of nodes>
+chmod +x run.sh
+./run.sh <number of nodes>
