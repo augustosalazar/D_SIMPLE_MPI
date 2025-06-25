@@ -79,3 +79,7 @@ I am process  1  msg received in  0.0017832  seconds, data [0.2863977651541396, 
 I am process  0  sent data to 2 in  0.0015640000000001208  seconds
 I am process  2  msg received in  2.0043185  seconds, data [0.8867952239532707, 0.07933763012857642, 0.8283312684907489]
 ```
+
+### Activities
+
+Find the differences between the following send, ssend, isend, Send, Ssend, ISend methods in MPI
