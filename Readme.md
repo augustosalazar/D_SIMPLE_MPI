@@ -80,6 +80,30 @@ I am process  0  sent data to 2 in  0.0015640000000001208  seconds
 I am process  2  msg received in  2.0043185  seconds, data [0.8867952239532707, 0.07933763012857642, 0.8283312684907489]
 ```
 
+```bash
+docker run --rm -v "%cd%\target:/app" augustosalazar/un_mpi_image:v5 mpiexec --allow-run-as-root -n 3 python /app/lowLevelSendTest.py
+I am process 1 going to receive, but first wait 3 seconds
+I am process 2 going to receive, but first wait 1 second
+I am process 0 going to send to process 1
+I am process 0 sent data to 1 in 0.0006469 seconds
+I am process 0 going to send to process 2
+I am process 0 sent data to 2 in 6.200000000000042e-06 seconds
+I am process 2 msg received in 8.31e-05 seconds, data [0.8370235 0.661478  0.6755458]
+I am process 1 msg received in 4.93e-05 seconds, data [0.09237162 0.6890432  0.9405974 ]
+```
+
+```bash
+docker run --rm -v "%cd%\target:/app" augustosalazar/un_mpi_image:v5 mpiexec --allow-run-as-root -n 3 python /app/lowLevelSendTest.py 40000
+I am process 2 going to receive, but first wait 1 second
+I am process 0 going to send to process 1
+I am process 1 going to receive, but first wait 3 seconds
+I am process 0 sent data to 1 in 3.001487 seconds
+I am process 1 msg received in 0.0001234 seconds, data [0.00958399 0.9023033  0.9253317 ]
+I am process 0 going to send to process 2
+I am process 0 sent data to 2 in 9.10000000002853e-05 seconds
+I am process 2 msg received in 2.0005069 seconds, data [0.62247777 0.0890263  0.17499022]
+```
+
 ### Activities
 
-Find the differences between the following send, ssend, isend, Send, Ssend, ISend methods in MPI
+Find the differences and preferred scenario of the following methods in MPI: send, ssend, isend, Send, Ssend, ISend, recv, irecv, Recv and IRecv.
