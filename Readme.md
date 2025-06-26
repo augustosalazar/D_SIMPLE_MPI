@@ -107,3 +107,13 @@ I am process 2 msg received in 2.0005069 seconds, data [0.62247777 0.0890263  0.
 ### Activities
 
 Find the differences and preferred scenario of the following methods in MPI: send, ssend, isend, Send, Ssend, ISend, recv, irecv, Recv and IRecv.
+
+## Shared Memory
+```bash
+docker run --rm -v "%cd%\target:/app" augustosalazar/un_mpi_image:v5 mpiexec --allow-run-as-root -n 3 python /app/sharedMemory.py
+Proceso 2 de 3 iniciado.
+Proceso 0 de 3 iniciado.
+Proceso 1 de 3 iniciado.
+Contenido del array compartido:
+[ 0 10 20]
+```
